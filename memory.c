@@ -14,6 +14,10 @@ int main() {
     printf("origin_str = %s\n", c);
 
     char *new_c = realloc(c, 15);
+    if(new_c == NULL){
+        free(c);
+        exit(-1);
+    }
     strcat(new_c, "abcd\0");
     printf("new_str = %s\n", new_c);
 
